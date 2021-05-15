@@ -2,6 +2,12 @@ use bevy::prelude::*;
 
 fn main() {
     App::build()
+        .insert_resource(WindowDescriptor {
+            title: "Hello Bevy!".to_string(),
+            width: 800.0,
+            height: 600.0,
+            ..Default::default()
+        })
         .add_plugins(DefaultPlugins)
         .add_startup_system(setup.system())
         .add_system(animate.system())
